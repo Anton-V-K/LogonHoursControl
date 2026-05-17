@@ -5,13 +5,17 @@
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
+    <!-- MultiByte charset isn't supported -->
+    <!-- Unicode charset may cause problems in old zlib (before 1.2.11) -->
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset> <!-- VS2019 -->
+    <PlatformToolset>v143</PlatformToolset> <!-- VS2022 -->
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="user\_Platform.props" Condition="exists('user\_Platform.props')"/>

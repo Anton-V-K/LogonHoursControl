@@ -39,4 +39,5 @@
 /_releases
 
 *.aps
+*.bak
 *.vcxproj.user
