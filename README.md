@@ -40,8 +40,9 @@ The application doesn't require any special installation.
 - Run `LogonHoursMonitor.exe` to start the tray application (it also registers itself in the current user's Run key).
 - As Administrator, register the sign-in credential provider: `LogonHoursMonitor.exe --install-cp`
 - Sign out or lock the workstation to see the **Allowed logon hours** tile on the sign-in screen.
-  ![](doc\Win10x64-LogonUI-Users_list.png)
-  ![](doc\Win10x64-LogonUI-Allowed_hours.png)
+
+  ![](doc/Win10x64-LogonUI-Users_list.png)
+  ![](doc/Win10x64-LogonUI-Allowed_hours.png)
 - To remove the sign-in tile: `LogonHoursMonitor.exe --uninstall-cp` (as Administrator).
 - Prefer **Release** builds on a real machine; Debug builds must not use Address Sanitizer in the credential provider DLL.
 
