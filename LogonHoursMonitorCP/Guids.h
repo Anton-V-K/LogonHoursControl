@@ -1,0 +1,7 @@
+#pragma once
+
+#include <initguid.h>
+
+// {8F2E4A9D-1B3C-4E5F-9A6B-7C8D9E0F1A2B}
+DEFINE_GUID(CLSID_LogonHoursMonitorProvider,
+    0x8f2e4a9d, 0x1b3c, 0x4e5f, 0x9a, 0x6b, 0x7c, 0x8d, 0x9e, 0x0f, 0x1a, 0x2b);
