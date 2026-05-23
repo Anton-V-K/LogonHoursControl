@@ -40,6 +40,8 @@ The application doesn't require any special installation.
 - Run `LogonHoursMonitor.exe` to start the tray application (it also registers itself in the current user's Run key).
 - As Administrator, register the sign-in credential provider: `LogonHoursMonitor.exe --install-cp`
 - Sign out or lock the workstation to see the **Allowed logon hours** tile on the sign-in screen.
+  ![](doc\Win10x64-LogonUI-Users_list.png)
+  ![](doc\Win10x64-LogonUI-Allowed_hours.png)
 - To remove the sign-in tile: `LogonHoursMonitor.exe --uninstall-cp` (as Administrator).
 - Prefer **Release** builds on a real machine; Debug builds must not use Address Sanitizer in the credential provider DLL.
 
@@ -91,7 +93,7 @@ It is enough to copy the required DLL from VisualStudio platform toolset directo
 
 ## Supported Windows versions
 
-This project is intended to be useful in Windows 10, where you cannot easily establish parental control for Local Accounts.
+This project is intended to be useful in Windows 10+, where you cannot easily establish parental control for Local Accounts.
 
 Though the built-in classic parental control is available in Windows 7/8.1, you still can make use of this project.
 
@@ -99,6 +101,11 @@ Though the built-in classic parental control is available in Windows 7/8.1, you 
 ![The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer](doc/Windows8.1-api-ms-win-crt-runtime-l1-1-0.dll_is_missing.png)
 
 ## History
+
+### 1.2.0 Alpha (23.05.2026)
+
+- [x] `LogonHoursMonitor` is available (#5)
+- [x] VS2022 is used by default
 
 ### 1.1.0 Alpha (10.05.2023)
 
