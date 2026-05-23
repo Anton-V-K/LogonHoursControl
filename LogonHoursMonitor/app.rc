@@ -10,4 +10,4 @@
 #undef APSTUDIO_HIDDEN_SYMBOLS
 #undef APSTUDIO_READONLY_SYMBOLS
 
-IDI_APP                 ICON                    "app.ico"
+IDI_APP                 ICON                    "..\\LogonHoursControl.ico"
