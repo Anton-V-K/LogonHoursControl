@@ -31,6 +31,8 @@
 *.out
 *.app
 
+/*.7z
+
 /.tmp
 /.vs
 /_out

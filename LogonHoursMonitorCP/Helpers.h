@@ -1,0 +1,4 @@
+#pragma once
+
+HRESULT FieldDescriptorCopy(const CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR& source,
+    CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR** target);

@@ -14,7 +14,7 @@ LPSTR W2A(LPCWSTR lpwszStrIn)
 {
     if (!lpwszStrIn)
         return NULL;
-    const size_t nInputStrLen = wcslen(lpwszStrIn);
+    const int nInputStrLen = wcslen(lpwszStrIn);
 
     // Double NULL termination
     const int nOutputStrLen = WideCharToMultiByte(CP_ACP, 0, lpwszStrIn, nInputStrLen, NULL, 0, 0, 0) + 2;

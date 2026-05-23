@@ -104,27 +104,12 @@ LRESULT CMainDialog::OnInitDialog(HWND, LPARAM)
             const UINT x = rcGroup.left + xshift + hour * width;
             const auto hwndCheckBox = CreateWindow(_T("Button"), NULL, WS_CHILD | WS_VISIBLE | WS_EX_NOPARENTNOTIFY | BS_CHECKBOX | BS_PUSHLIKE,
                 x, y, width, height, m_hWnd, HMENU(id), NULL, NULL);
-#if 1
+
             wchar_t tttext[42];
             swprintf_s(tttext, L"%s %02d:00-%02d:00", namesLong[day], hour, hour + 1);
             CToolInfo ti(TTF_SUBCLASS, hwndCheckBox, 0, NULL, tttext);
             ATLASSERT(m_ctrlToolTip.AddTool(ti));
             // m_ctrlToolTip.AddTool(hwndCheckBox, tttext); // , & rcTool, TTF_IDISHWND);
-#else
-            RECT rcTool;
-            rcTool.left = x;
-            rcTool.top = y;
-            rcTool.right = x + width;
-            rcTool.bottom = y + height;
-            TOOLINFOW toolinfo = { 0 };
-            toolinfo.cbSize = sizeof(toolinfo); // TTTOOLINFO_V1_SIZE;
-            toolinfo.hwnd = m_hWnd;
-            toolinfo.rect = rcTool;
-            // toolinfo.uFlags = TTF_IDISHWND;
-            toolinfo.uId = id;
-            toolinfo.lpszText = LPTSTR(L"Это поле для ввода текста");
-            ::SendMessageW(m_ctrlToolTip, TTM_ADDTOOL, 0, LPARAM(&toolinfo));
-#endif
 
             ++id;
         }
@@ -163,7 +148,7 @@ LRESULT CMainDialog::OnOK(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, 
         shex.lpVerb = L"runas";
         shex.nShow  = SW_SHOW;
         shex.lpFile = filepath;
-        // TODO pass currently selected user
+        // TODO pass currently selected user (#3)
         shex.lpParameters   = GetCommandLine();
         shex.lpDirectory    = curdir;
 
