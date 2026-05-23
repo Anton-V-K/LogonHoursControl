@@ -1,4 +1,4 @@
-[![MSBuild](https://github.com/Anton-V-K/ClassicParentalControl/actions/workflows/msbuild.yml/badge.svg)](actions/workflows/msbuild.yml)
+[![MSBuild](https://github.com/Anton-V-K/LogonHoursControl/actions/workflows/msbuild.yml/badge.svg)](https://github.com/Anton-V-K/LogonHoursControl/actions)
 
 # Logon Hours Control (for Windows)
 
