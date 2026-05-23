@@ -1,9 +1,7 @@
 #include "stdafx.h"
 #include "LogonHours.h"
 
-#ifndef LOGONHOURS_CP_BUILD
 #include "Logger.h"
-#endif
 
 #pragma comment(lib, "Netapi32.lib")                // NetUserGetInfo(), etc.
 

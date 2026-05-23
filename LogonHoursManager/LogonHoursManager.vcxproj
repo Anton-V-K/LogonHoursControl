@@ -22,7 +22,6 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{1fb09ad5-5bea-427a-9862-6884a60aa97a}</ProjectGuid>
     <RootNamespace>LogonHoursManager</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="..\_props\TARGET_EXE.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

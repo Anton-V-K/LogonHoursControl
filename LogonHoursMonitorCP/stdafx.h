@@ -17,6 +17,7 @@
 
 #include <atlbase.h>
 
+#if 0 // DEL
 // log4cpp must not be initialized inside LogonUI; stub logging for shared Common code.
 struct CpLogNullStream
 {
@@ -33,5 +34,6 @@ inline CpLogNullStream CpLogNull(const char*) { return {}; }
 #define LOG_NOTICE(x)  CpLogNull(x)
 #define LOG_INFO(x)    CpLogNull(x)
 #define LOG_DEBUG(x)   CpLogNull(x)
+#endif
 
 #endif
