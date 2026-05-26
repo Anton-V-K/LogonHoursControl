@@ -36,8 +36,14 @@
     <ClInclude Include="UIEx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CpInstall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CpInstall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="WinMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

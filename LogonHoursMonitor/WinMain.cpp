@@ -1,32 +1,11 @@
 #include "stdafx.h"
 
-#include "CpInstall.h"
 #include "TrayWnd.h"
 
 CAppModule _Module;
 
 namespace
 {
-    bool HasCommandLineSwitch(const wchar_t* switchName)
-    {
-        int argc = 0;
-        wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-        if (!argv)
-            return false;
-
-        bool found = false;
-        for (int i = 1; i < argc; ++i)
-        {
-            if (_wcsicmp(argv[i], switchName) == 0)
-            {
-                found = true;
-                break;
-            }
-        }
-        LocalFree(argv);
-        return found;
-    }
-
     bool EnsureSingleInstance()
     {
         HANDLE mutex = CreateMutex(nullptr, TRUE, L"LogonHoursMonitor");
@@ -66,30 +45,6 @@ namespace
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _In_ int)
 {
     LogMain("LogonHoursMonitor");
-
-    if (HasCommandLineSwitch(L"--install-cp"))
-    {
-        if (!InstallCredentialProvider())
-        {
-            MessageBox(nullptr, L"Failed to register the sign-in credential provider.\nRun as Administrator.",
-                L"Logon Hours Monitor", MB_ICONERROR);
-            return 1;
-        }
-        MessageBox(nullptr, L"Sign-in credential provider registered.", L"Logon Hours Monitor", MB_OK);
-        return 0;
-    }
-
-    if (HasCommandLineSwitch(L"--uninstall-cp"))
-    {
-        if (!UninstallCredentialProvider())
-        {
-            MessageBox(nullptr, L"Failed to unregister the sign-in credential provider.\nRun as Administrator.",
-                L"Logon Hours Monitor", MB_ICONERROR);
-            return 1;
-        }
-        MessageBox(nullptr, L"Sign-in credential provider unregistered.", L"Logon Hours Monitor", MB_OK);
-        return 0;
-    }
 
     if (!EnsureSingleInstance())
         return 0;

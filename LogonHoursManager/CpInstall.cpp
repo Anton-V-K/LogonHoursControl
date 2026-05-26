@@ -17,7 +17,7 @@ namespace
         if (!slash)
             return {};
 
-        wcscpy_s(slash + 1, _countof(exePath) - (slash - exePath + 1), L"LogonHoursMonitorCP.dll");
+        wcscpy_s(slash + 1, _countof(exePath) - (slash - exePath + 1), L"LogonHoursProvider.dll");
         return exePath;
     }
 

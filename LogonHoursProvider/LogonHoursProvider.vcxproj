@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}</ProjectGuid>
-    <RootNamespace>LogonHoursMonitorCP</RootNamespace>
+    <RootNamespace>LogonHoursProvider</RootNamespace>
   </PropertyGroup>
   <Import Project="..\_props\TARGET_EXE.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -49,7 +49,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>LogonHoursMonitorCP.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>LogonHoursProvider.def</ModuleDefinitionFile>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -61,7 +61,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>LogonHoursMonitorCP.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>LogonHoursProvider.def</ModuleDefinitionFile>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
@@ -74,7 +74,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>LogonHoursMonitorCP.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>LogonHoursProvider.def</ModuleDefinitionFile>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -86,7 +86,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>LogonHoursMonitorCP.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>LogonHoursProvider.def</ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
@@ -112,7 +112,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="LogonHoursMonitorCP.def" />
+    <None Include="LogonHoursProvider.def" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

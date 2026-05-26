@@ -5,7 +5,7 @@
 The project provides utilities which allow you to establish/maintain *allowed logon hours* for Local Accounts in Windows 10+.
 
 - `LogonHoursManager` is a GUI application to change the allowed logon hours for local users
-- `LogonHoursMonitor` is a background tray application that shows allowed logon hours for all local users at the sign-in screen (via `LogonHoursMonitorCP.dll` credential provider)
+- `LogonHoursMonitor` is a background tray application that shows allowed logon hours for all local users at the sign-in screen (via `LogonHoursProvider.dll` credential provider)
 - `LogonHoursService` it a service which monitors the allowed logon hours and locks the session once the time is over
 
 The allowed logon hours are the ones you can set with a command like `net user USERNAME /time:M-F,10-18`.
@@ -32,26 +32,33 @@ Copy all binaries from the archive into a directory with read-only access to Eve
 
 ### Manager
 
-The application doesn't require any special installation.
+The application doesn't require any special installation for editing logon hours.
 
-### Monitor
+- Use the binaries which match the architecture of your Windows; keep `LogonHoursManager.exe` and `LogonHoursProvider.dll` in the same directory.
 
-- Use the binaries which match the architecture of your Windows; keep both `LogonHoursMonitor.exe` and `LogonHoursMonitorCP.dll` in the same directory.
-- Run `LogonHoursMonitor.exe` to start the tray application (it also registers itself in the current user's Run key).
-- As Administrator, register the sign-in credential provider: `LogonHoursMonitor.exe --install-cp`
+- As Administrator, register the sign-in credential provider: `LogonHoursManager.exe --install-cp`
+
+- To remove the sign-in tile: `LogonHoursManager.exe --uninstall-cp` (as Administrator).
+
 - Sign out or lock the workstation to see the **Allowed logon hours** tile on the sign-in screen.
-
+  
   ![](doc/Win10x64-LogonUI-Users_list.png)
   ![](doc/Win10x64-LogonUI-Allowed_hours.png)
-- To remove the sign-in tile: `LogonHoursMonitor.exe --uninstall-cp` (as Administrator).
+
 - Prefer **Release** builds on a real machine; Debug builds must not use Address Sanitizer in the credential provider DLL.
 
 **Recovery if the sign-in screen loops**
 
 1. Boot **Safe Mode**.
-2. Run `LogonHoursMonitor.exe --uninstall-cp` as Administrator, or delete  
+2. Run `LogonHoursManager.exe --uninstall-cp` as Administrator, or delete  
    `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{8F2E4A9D-1B3C-4E5F-9A6B-7C8D9E0F1A2B}`  
    and `HKCR\CLSID\{8F2E4A9D-1B3C-4E5F-9A6B-7C8D9E0F1A2B}`.
+
+<!-- TODO?
+### Monitor
+
+- Run `LogonHoursMonitor.exe` to start the tray application (it also registers itself in the current user's Run key).
+-->
 
 ### Service
 

@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CpInstall.h" />
     <ClInclude Include="UIEx.h" />
     <ClInclude Include="WinDataExchangeEx.h" />
     <ClInclude Include="MainDialog.h" />
@@ -94,6 +95,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CpInstall.cpp" />
     <ClCompile Include="MainDialog.cpp" />
     <ClCompile Include="MainModel.cpp" />
     <ClCompile Include="WinMain.cpp" />

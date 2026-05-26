@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36616.10 d17.14
+VisualStudioVersion = 17.14.36616.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogonHoursService", "LogonHoursService\LogonHoursService.vcxproj", "{D6E78055-7BC4-4301-BDFC-C4DDA35E959C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C} = {F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogonHoursManager", "LogonHoursManager\LogonHoursManager.vcxproj", "{1FB09AD5-5BEA-427A-9862-6884A60AA97A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D6E78055-7BC4-4301-BDFC-C4DDA35E959C} = {D6E78055-7BC4-4301-BDFC-C4DDA35E959C}
+		{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C} = {F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Common\Common.vcxitems", "{2665D681-30A9-4760-9648-25AB585A19B3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogonHoursMonitor", "LogonHoursMonitor\LogonHoursMonitor.vcxproj", "{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogonHoursMonitorCP", "LogonHoursMonitorCP\LogonHoursMonitorCP.vcxproj", "{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogonHoursProvider", "LogonHoursProvider\LogonHoursProvider.vcxproj", "{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +42,6 @@ Global
 		{1FB09AD5-5BEA-427A-9862-6884A60AA97A}.Release|x64.Build.0 = Release|x64
 		{1FB09AD5-5BEA-427A-9862-6884A60AA97A}.Release|x86.ActiveCfg = Release|Win32
 		{1FB09AD5-5BEA-427A-9862-6884A60AA97A}.Release|x86.Build.0 = Release|Win32
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Debug|x64.ActiveCfg = Debug|x64
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Debug|x64.Build.0 = Debug|x64
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Debug|x86.ActiveCfg = Debug|Win32
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Debug|x86.Build.0 = Debug|Win32
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Release|x64.ActiveCfg = Release|x64
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Release|x64.Build.0 = Release|x64
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Release|x86.ActiveCfg = Release|Win32
-		{E8F1A2B3-C4D5-4E6F-8A9B-0C1D2E3F4A5B}.Release|x86.Build.0 = Release|Win32
 		{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}.Debug|x64.ActiveCfg = Debug|x64
 		{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}.Debug|x64.Build.0 = Debug|x64
 		{F9A2B3C4-D5E6-4F7A-9B0C-1D2E3F4A5B6C}.Debug|x86.ActiveCfg = Debug|Win32
@@ -64,7 +61,6 @@ Global
 		Common\Common.vcxitems*{1fb09ad5-5bea-427a-9862-6884a60aa97a}*SharedItemsImports = 4
 		Common\Common.vcxitems*{2665d681-30a9-4760-9648-25ab585a19b3}*SharedItemsImports = 9
 		Common\Common.vcxitems*{d6e78055-7bc4-4301-bdfc-c4dda35e959c}*SharedItemsImports = 4
-		Common\Common.vcxitems*{e8f1a2b3-c4d5-4e6f-8a9b-0c1d2e3f4a5b}*SharedItemsImports = 4
 		Common\Common.vcxitems*{f9a2b3c4-d5e6-4f7a-9b0c-1d2e3f4a5b6c}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal

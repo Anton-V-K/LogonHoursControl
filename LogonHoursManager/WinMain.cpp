@@ -2,16 +2,68 @@
 
 #include <Common/LogonHours.h>
 
+#include "CpInstall.h"
 #include "MainDialog.h"
 #include "MainModel.h"
 
 #if 1
 CAppModule _Module;
 
+namespace
+{
+    bool HasCommandLineSwitch(const wchar_t* switchName)
+    {
+        int argc = 0;
+        wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
+        if (!argv)
+            return false;
+
+        bool found = false;
+        for (int i = 1; i < argc; ++i)
+        {
+            if (_wcsicmp(argv[i], switchName) == 0)
+            {
+                found = true;
+                break;
+            }
+        }
+        LocalFree(argv);
+        return found;
+    }
+}
+
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
     , _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
-    LogMain();
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
+    UNREFERENCED_PARAMETER(nCmdShow);
+
+    LogMain("LogonHoursManager");
+
+    if (HasCommandLineSwitch(L"--install-cp"))
+    {
+        if (!InstallCredentialProvider())
+        {
+            MessageBox(nullptr, L"Failed to register the sign-in credential provider.\nRun as Administrator.",
+                L"Logon Hours Manager", MB_ICONERROR);
+            return 1;
+        }
+        MessageBox(nullptr, L"Sign-in credential provider registered.", L"Logon Hours Manager", MB_OK);
+        return 0;
+    }
+
+    if (HasCommandLineSwitch(L"--uninstall-cp"))
+    {
+        if (!UninstallCredentialProvider())
+        {
+            MessageBox(nullptr, L"Failed to unregister the sign-in credential provider.\nRun as Administrator.",
+                L"Logon Hours Manager", MB_ICONERROR);
+            return 1;
+        }
+        MessageBox(nullptr, L"Sign-in credential provider unregistered.", L"Logon Hours Manager", MB_OK);
+        return 0;
+    }
 
     _Module.Init(NULL, hInstance);
 

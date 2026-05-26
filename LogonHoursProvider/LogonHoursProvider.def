@@ -1,4 +1,4 @@
-LIBRARY LogonHoursMonitorCP
+LIBRARY LogonHoursProvider
 EXPORTS
     DllCanUnloadNow     PRIVATE
     DllGetClassObject   PRIVATE
